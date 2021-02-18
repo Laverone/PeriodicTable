@@ -15,8 +15,8 @@
             <th>Symbol</th>
           </tr>
         </thead>
-            <tbody>
-              <tr *ngFor='let periodic in periodics'>
+            <tbody *ngFor='let periodic of table'>
+              <tr>
                 <input type="checkbox">
                   <td>{{ periodic.name }}</td>
                   <td>{{ periodic.mass }}</td>
@@ -24,6 +24,7 @@
                   <td>{{ periodic.symbol }}</td>
               </tr>
             </tbody>
+      </table>
             
 
 
