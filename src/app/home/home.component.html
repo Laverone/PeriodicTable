@@ -16,27 +16,15 @@
           </tr>
         </thead>
             <tbody>
-              <tr>
-              <input type="checkbox">
-              <td>{{ table.tableNumber }}</td>
-              <td>{{ table.tableName }}</td>
-              <td>{{ table.tableMass }}</td>
-              <td>{{ table.tableSymbol }}</td>
+              <tr *ngFor='let table in periodic'>
+                <input type="checkbox">
+                  <td>{{ table.tableNumber }}</td>
+                  <td>{{ table.tableName }}</td>
+                  <td>{{ table.tableMass }}</td>
+                  <td>{{ table.tableSymbol }}</td>
               </tr>
-
-                    
             </tbody>
             
-        
-
-      </table>
-
-      <script>
-        fetch("table.json")
-        //var myArray = [
-        //  {'name':'Hydrogen', 'mass':'1,008', 'number':'1', 'symbol':'H'}
-        //]
-      </script>
 
 
     </div>
