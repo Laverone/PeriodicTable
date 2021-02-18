@@ -16,12 +16,12 @@
           </tr>
         </thead>
             <tbody>
-              <tr *ngFor='let table in periodic'>
+              <tr *ngFor='let periodic in periodics'>
                 <input type="checkbox">
-                  <td>{{ table.tableNumber }}</td>
-                  <td>{{ table.tableName }}</td>
-                  <td>{{ table.tableMass }}</td>
-                  <td>{{ table.tableSymbol }}</td>
+                  <td>{{ periodic.name }}</td>
+                  <td>{{ periodic.mass }}</td>
+                  <td>{{ periodic.number }}</td>
+                  <td>{{ periodic.symbol }}</td>
               </tr>
             </tbody>
             
