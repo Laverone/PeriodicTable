@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
     table: ITable[]= [];
 
-    selectedItems:string[];
+    selectedItems:ITable[];
 
     constructor(private tableService: TableService){
 
@@ -30,17 +30,17 @@ export class HomeComponent implements OnInit {
       error: err => this.errorMessage = err
     })
 
-    this.selectedItems = new Array<string>();
+    this.selectedItems = new Array<ITable>();
   }
 
 
 
-  getPeriodic(e:any,name:string, mass: number, number: number, symbol: string)
+  getPeriodic(e:any, table:ITable)
   {
     if(e.target.checked)
     {
-      console.log(name + mass + number + symbol + 'Checked');
-      this.selectedItems.push(name + mass + number + symbol);
+      console.log(table.name + table.mass + table.number + table.symbol + 'Checked');
+      this.selectedItems.push(table);
     }
     else
     {
