@@ -9,7 +9,7 @@ import { ITable } from './table'
     providedIn: 'root'
 })
 export class TableService {
-    private tableUrl = './table.json';
+    private tableUrl = 'assets/table.json';
 
     constructor (private http: HttpClient) {}
 

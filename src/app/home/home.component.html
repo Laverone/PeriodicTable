@@ -7,7 +7,7 @@
         <thead>
           <tr>
             <th>
-              <input type="checkbox">
+              <input type="checkbox" (change)="get">
             </th>
             <th>Number</th>
             <th>Name</th>
@@ -17,7 +17,7 @@
         </thead>
             <tbody *ngFor='let periodic of table'>
               <tr>
-                <input type="checkbox">
+                <input type="checkbox" (change)="getPerodic($event,periodic.name,periodic.mass,periodic.number,periodic.symbol)">
                   <td>{{ periodic.name }}</td>
                   <td>{{ periodic.mass }}</td>
                   <td>{{ periodic.number }}</td>
@@ -26,6 +26,7 @@
             </tbody>
       </table>
             
+      <button class="confirm">Confirm</button>
 
 
     </div>

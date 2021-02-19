@@ -12,21 +12,44 @@ export class HomeComponent implements OnInit {
   pageTitle: string = 'Periodic Table';
   errorMessage: string;
 
-    table: ITable[]= []
+    table: ITable[]= [];
 
-    constructor(private http: HttpClient){
+    selectedItems:string[];
+
+    constructor(private tableService: TableService){
 
     }
 
   
 
   ngOnInit(): void {
-    this.http.get(this.table).subscribe({
+    this.tableService.getTable().subscribe({
       next: table => {
         this.table= table
       },
       error: err => this.errorMessage = err
     })
+
+    this.selectedItems = new Array<string>();
+  }
+
+
+
+  getPeriodic(e:any,name:string, mass: number, number: number, symbol: string)
+  {
+    if(e.target.checked)
+    {
+      console.log(name + mass + number + symbol + 'Checked');
+      this.selectedItems.push(name + mass + number + symbol);
+    }
+    else
+    {
+      console.log();
+
+    }
+
+    console.log(this.selectedItems)
+
   }
 
 
