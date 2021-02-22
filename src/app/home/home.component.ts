@@ -39,17 +39,20 @@ export class HomeComponent implements OnInit {
   {
     if(e.target.checked)
     {
-      console.log(table.name + table.mass + table.number + table.symbol + 'Checked');
       this.selectedItems.push(table);
     }
     else
     {
-      console.log();
-
+      this.selectedItems = this.selectedItems.filter(m=>m!=table);
     }
 
-    console.log(this.selectedItems)
+  
 
+  }
+
+  sendData (e:any) 
+  {
+    console.log(this.selectedItems);
   }
 
 
